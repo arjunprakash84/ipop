@@ -16,9 +16,9 @@ namespace Ipop {
   /// <remarks>An IP Address of 11.22.33.44 would translate into C022033044.ipop,
   /// the extra "0"s are necessary and keep all names at a constant length of 15
   /// (including the domain name .ipop).</remarks>
-  public class StaticDNS : DNS {
-    public StaticDNS(MemBlock ip_address, MemBlock netmask) :
-      base(ip_address, netmask)
+    public class StaticDNS : DNS {
+        public StaticDNS(MemBlock ip_address, MemBlock netmask, string dns_server, bool RA) :
+            base(ip_address, netmask, dns_server, RA)
     {
     }
 

@@ -31,7 +31,7 @@
 <xs:element name="DNS">
   <xs:complexType>
     <xs:all>
-      <xs:element ref="DNSType" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Type" type="xs:string" minOccurs="0"/>
       <xs:element name="PrimaryNS" type="xs:string" minOccurs="0"/>
       <xs:element name="SecondaryNS" type="xs:string" minOccurs="0"/>
       <xs:element name="RecursiveAvailable" type="xs:boolean" />
@@ -84,13 +84,5 @@
   </xs:simpleType>
 </xs:element>
 
-<xs:element name="DNSType">
-  <xs:simpleType>
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="StaticDNS"/>
-      <xs:enumeration value="DhtDNS"/>
-    </xs:restriction>
-  </xs:simpleType>
-</xs:element>
 
 </xs:schema>

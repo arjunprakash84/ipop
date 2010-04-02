@@ -43,7 +43,7 @@ namespace Ipop {
     /// <summary>Allow static addresses</summary>
     public bool AllowStaticAddresses;
     /// <summary>DNS Type, default none</summary>
-    public string DNSType;
+    public DNSInfo DNS;
 
     public GroupVPNInfo GroupVPN;
 
@@ -62,6 +62,13 @@ namespace Ipop {
       /**  <summary>Not implemented, but should contain last ethernet address
       for the node</summary>*/
       public string EthernetAddress;
+    }
+
+    public class DNSInfo{
+      public string Type;
+      public string PrimaryNS;
+      public string SecondaryNS;
+      public bool RecursiveAvailable;
     }
 
     public class GroupVPNInfo {

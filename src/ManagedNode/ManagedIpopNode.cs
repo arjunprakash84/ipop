@@ -48,7 +48,8 @@ namespace Ipop.ManagedNode {
     {
       _dhcp_server = ManagedDHCPServer.GetManagedDHCPServer(_ipop_config.VirtualNetworkDevice);  
       _dhcp_config = _dhcp_server.Config;
-      _marad = new ManagedAddressResolverAndDNS(Brunet, _dhcp_server, ((ManagedDHCPServer) _dhcp_server).LocalIP);
+      _marad = new ManagedAddressResolverAndDNS(Brunet, _dhcp_server, 
+        ((ManagedDHCPServer)_dhcp_server).LocalIP, _ipop_config.DNS.PrimaryNS,_ipop_config.DNS.RecursiveAvailable);
       _dns = _marad;
       _address_resolver = _marad;
       _translator = _marad;
